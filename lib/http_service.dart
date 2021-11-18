@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import 'post_model.dart';
@@ -28,7 +27,6 @@ class HttpMethods {
                                       headers: {"Content-Type": "application/json"},
                                       body: newPost);
     if(response.statusCode == 200) {
-      // return getPosts();
       return jsonDecode(response.body);
     }
     else {
@@ -43,7 +41,6 @@ class HttpMethods {
                                       headers: {"Content-Type": "application/json"},
                                       body: updatedPost);
       if(response.statusCode == 200) {
-        // return getPosts();
         return jsonDecode(response.body);
       }
       else {
@@ -57,7 +54,6 @@ class HttpMethods {
     
     if(response.statusCode == 200) {
       return getPosts();
-      // return jsonDecode(response.body);
     }
     else {
       throw Exception('Unable to delete resource');

@@ -36,13 +36,7 @@ class _TestRestHTTPState extends State<TestRestHTTP> {
         margin: EdgeInsets.fromLTRB(0, 0, 10, 24),
         child: IconButton(
           icon: Icon(Icons.add),
-          onPressed: () async{
-            var res =
-                await Navigator.of(context).pushNamed('/add-post');
-                setState(() {
-                  HttpMethods().getPosts();
-                });
-          },
+          onPressed: () => Navigator.of(context).pushNamed('/add-post'),
         ),
       ),
       body: FutureBuilder(
@@ -61,13 +55,8 @@ class _TestRestHTTPState extends State<TestRestHTTP> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           IconButton(
-                            onPressed: () {
-                              Navigator.of(context)
-                                  .pushNamed('/add-post', arguments: content[i])
-                                  .then((value) {
-                                setState(() {});
-                              });
-                            },
+                            onPressed: () => Navigator.of(context)
+                                  .pushNamed('/add-post', arguments: content[i]),
                             icon: Icon(
                               Icons.edit,
                               color: Colors.green,
