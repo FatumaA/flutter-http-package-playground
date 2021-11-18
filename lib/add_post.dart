@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:playground/http_service.dart';
@@ -17,7 +18,6 @@ class _PostFormState extends State<PostForm> {
 
   updatePost(Post post) async {
     await HttpMethods().updatePost(post);
-    Navigator.of(context).pop();
   }
 
   createPost(Post post) async {
@@ -110,8 +110,9 @@ class _PostFormState extends State<PostForm> {
                         subtitle: subtitle.text,
                         author: author.text);
                     createPost(newPost);
-                    Navigator.of(context).pop();
+                    // Navigator.of(context).pop();
                   }
+                  Navigator.of(context).popAndPushNamed('/');
                 },
                 child: Text(
                   'Save Post',

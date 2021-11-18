@@ -25,39 +25,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-   @override
-  void initState() {
-    setState(() {
-      
-    });
-  super.initState();
-  }
-
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Playground'),
-      ),
-      floatingActionButton: Container(
-        decoration: BoxDecoration(
-          color: Colors.deepPurple[300],
-          borderRadius: BorderRadius.circular(50),
-        ),
-        padding: EdgeInsets.all(18),
-        margin: EdgeInsets.fromLTRB(0, 0, 10, 24),
-        child: IconButton(
-          icon: Icon(Icons.add),
-          onPressed: () =>  Navigator.of(context)
-                              .pushNamed('/add-post')
-                              .then((value) { setState(() {}); }),
-        ),
       ),
       body: TestRestHTTP(),
     );

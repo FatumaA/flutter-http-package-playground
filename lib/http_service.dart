@@ -28,7 +28,8 @@ class HttpMethods {
                                       headers: {"Content-Type": "application/json"},
                                       body: newPost);
     if(response.statusCode == 200) {
-      return getPosts();
+      // return getPosts();
+      return jsonDecode(response.body);
     }
     else {
       throw Exception('Failed Post Operation');
@@ -42,7 +43,8 @@ class HttpMethods {
                                       headers: {"Content-Type": "application/json"},
                                       body: updatedPost);
       if(response.statusCode == 200) {
-        return getPosts();
+        // return getPosts();
+        return jsonDecode(response.body);
       }
       else {
         throw Exception('Unable to update resource');
@@ -55,6 +57,7 @@ class HttpMethods {
     
     if(response.statusCode == 200) {
       return getPosts();
+      // return jsonDecode(response.body);
     }
     else {
       throw Exception('Unable to delete resource');
